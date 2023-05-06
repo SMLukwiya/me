@@ -1,13 +1,20 @@
 import NavBar from "@/components/nav/Navbar";
 import { api } from "@/utils/api";
 
+let quote = {
+  content: 'We make a living by what we get, but we make a life by what we give.',
+  author: "Winston Churchill"
+}
+
 export default function Home() {
   const {data: quotes, isFetching} = useGetQuotes();
 
   const cats = ['dab', 'skate', 'shades']
   const cat = cats[Math.floor(Math.random() * 3)]
 
-  const quote = quotes[Math.floor(Math.random() * 25)]
+  if (quotes) {
+    quote = quotes[Math.floor(Math.random() * 25)]
+  }
   
   return (
     <div className="flex flex-col bg-[url('/bg-morphism.png')] h-screen w-screen bg-cover bg-no-repeat px-7 md:block flex-wrap overflow-hidden text-center lg:text-left">
