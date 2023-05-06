@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function NavBar() {
     return (
-        <div className="flex items-center justify-between py-10 px-3">
+        <div className="flex items-center justify-between py-10 px-7">
             <div className="w-1/5">
                 <Link href="/">
                     <img src={'/logo-gradient.png'} alt="logo" height={50} width={100} />
