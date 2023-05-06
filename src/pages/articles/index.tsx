@@ -1,6 +1,7 @@
+import Layout from "@/components/Layout";
 
 export default function Articles() {
     return (
-        <div>Article</div>
+        <Layout>Articles</Layout>
     )
 }

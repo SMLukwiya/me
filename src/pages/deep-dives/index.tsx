@@ -1,8 +1,7 @@
+import Layout from "@/components/Layout"
 
 export default function DeepDives() {
     return (
-        <div>
-            Deep dives
-        </div>
+        <Layout>Deep Dives</Layout>
     )
 }

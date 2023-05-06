@@ -1,6 +1,7 @@
+import Layout from "@/components/Layout";
 
 export default function Me() {
     return (
-        <div>Me</div>
+        <Layout>About me</Layout>
     )
 }
