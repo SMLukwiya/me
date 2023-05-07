@@ -25,6 +25,7 @@ export const articleUpdateSchema = z.object({
   description: z.string(),
   content: z.string(),
   authorName: z.string(),
+  tags: z.string().optional(),
 });
 
 export type ArticleRequest = z.infer<typeof articleCreateSchema>;
