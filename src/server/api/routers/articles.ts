@@ -26,13 +26,14 @@ export const articlesRouter = createTRPCRouter({
   create: protectedProcedure
     .input(articleCreateSchema)
     .mutation(async ({ ctx, input }) => {
-      const { title, description, content, authorName } = input;
+      const { title, description, content, authorName, tags } = input;
       const response = await ctx.prisma.article.create({
         data: {
           title,
           description,
           content,
           authorName,
+          tags,
         },
       });
       return response.id;

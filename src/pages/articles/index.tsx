@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import { api } from "@/utils/api";
-import Article from "@/components/articles/article";
+import Article from "@/components/articles/Article";
 
 // 
 import {sampleArticles} from "../../../.data/sampleArticles"

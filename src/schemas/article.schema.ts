@@ -6,7 +6,7 @@ export const articleSchema = z.object({
   description: z.string(),
   content: z.string(),
   authorName: z.string(),
-  tags: z.string(),
+  tags: z.string().nullable(),
   createdAt: z.string().or(z.date()),
   updatedAt: z.string().or(z.date()),
 });
@@ -15,6 +15,7 @@ export const articleCreateSchema = z.object({
   title: z.string(),
   description: z.string(),
   content: z.string(),
+  tags: z.string().optional(),
   authorName: z.string(),
 });
 
