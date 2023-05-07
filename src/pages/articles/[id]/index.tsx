@@ -11,7 +11,6 @@ export default function Article() {
     const {data: article, isFetching} = useGetArticle(id as string)
 
     if (isFetching) return <WrapperLoader />
-    console.log(article)
 
     return (
         <Layout>
