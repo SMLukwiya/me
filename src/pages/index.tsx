@@ -1,4 +1,5 @@
 import NavBar from "@/components/nav/Navbar";
+import Button from "@/components/ui/Button";
 import { api } from "@/utils/api";
 
 let quote = {
@@ -29,16 +30,8 @@ export default function Home() {
           <div className="mt-8 lg:mt-12">
             <h1 className="text-slate-100 text-2xl">Check out the latest in depth articles</h1>
             <div className="flex items-center justify-center lg:justify-start mt-4">
-                <button 
-                  className="rounded-full bg-white/80 px-14 py-4 text-center text-slate-800 font-semibold no-underline transition hover:bg-white/20 hover:text-slate-100 mr-4"
-                  >
-                  React
-                </button>
-                <button
-                  className="rounded-full bg-white/80 px-14 py-4 text-center text-slate-800 font-semibold no-underline transition hover:bg-white/20 ml-4 hover:text-slate-100"
-                >
-                  JavaScript
-                </button>
+              <Button>React</Button>
+              <Button>JavaScript</Button>
             </div>
           </div>
         </div>
