@@ -1,16 +1,21 @@
 import Layout from "@/components/Layout";
 import { api } from "@/utils/api";
 import Article from "@/components/articles/Article";
+import Loader from "@/components/ui/Loader";
 
 // 
 import {sampleArticles} from "../../../.data/sampleArticles"
 
 export default function Articles() {
+    const {data: articles, isFetching} = useGetArticles()
+
+    if (isFetching) return <div className="flex bg-slate-900 min-h-screen items-center justify-center"><Loader color="text-slate-100" /></div>
+
     return (
         <Layout>
             <h1 className="text-slate-200 text-xl text-center my-7">These articles cover different programming concepts and ideologies</h1>
             <div className="flex flex-wrap gap-3 w-4/5 m-auto justify-between">
-                {sampleArticles.map((article) => 
+                {articles?.map((article) => 
                     <div 
                         className="w-full sm:w-[45%] lg:w-[30%] rounded-lg" key={article.id}
                         >
