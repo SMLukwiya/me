@@ -13,3 +13,11 @@ export default function Loader({color}: {color?: string} = {color: "text-slate-8
         </div>
     )
 }
+
+export const WrapperLoader = () => {
+    return (
+        <div className="flex bg-slate-900 min-h-screen items-center justify-center">
+            <Loader color="text-slate-100" />
+        </div>
+    )
+}

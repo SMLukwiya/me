@@ -17,7 +17,7 @@ export const articlesRouter = createTRPCRouter({
       const response = await ctx.prisma.article.findUnique({
         where: { id: input.id },
       });
-      return response?.id;
+      return response;
     }),
   list: publicProcedure.query(async ({ ctx }) => {
     const articles = await ctx.prisma.article.findMany();

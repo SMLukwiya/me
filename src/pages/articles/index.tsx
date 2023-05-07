@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import { api } from "@/utils/api";
 import Article from "@/components/articles/Article";
-import Loader from "@/components/ui/Loader";
+import { WrapperLoader } from "@/components/ui/Loader";
 
 // 
 import {sampleArticles} from "../../../.data/sampleArticles"
@@ -9,7 +9,7 @@ import {sampleArticles} from "../../../.data/sampleArticles"
 export default function Articles() {
     const {data: articles, isFetching} = useGetArticles()
 
-    if (isFetching) return <div className="flex bg-slate-900 min-h-screen items-center justify-center"><Loader color="text-slate-100" /></div>
+    if (isFetching) return <WrapperLoader />
 
     return (
         <Layout>
