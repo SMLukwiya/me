@@ -1,3 +1,4 @@
+import Layout from "@/components/Layout";
 import NewDeepDiveForm from "@/components/deep-dives/NewDeepDiveForm";
 import { env } from "@/env.mjs";
 import { getServerAuthSession } from "@/server/auth";
@@ -6,9 +7,9 @@ import { GetServerSidePropsContext } from "next";
 
 export default function CreateArticle() {
     return (
-        <div className="bg-slate-900 py-5">
+        <Layout>
             <NewDeepDiveForm />
-        </div>
+        </Layout>
     )
 }
 

@@ -93,7 +93,7 @@ export default function NewDeepDiveForm() {
                     <Select 
                         {...form.register("categoryId")}
                         ref={form.register("categoryId").ref}
-                        name="categoryRef"
+                        name="categoryId"
                         label="Category"
                     >
                         {categories?.map((category) => 

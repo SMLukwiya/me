@@ -14,8 +14,8 @@ export default function Category() {
 
     return (
         <Layout>
-            <div className="flex flex-wrap gap-3 w-4/5 m-auto justify-between">
-                {articles?.map((article) => <DeepDiveArticle key={article.id} article={article} category={category} />)}
+            <div className="flex flex-wrap gap-3 w-4/5 m-auto justify-center">
+                {articles?.map((article) => <div className="w-full md:w-[45%]"><DeepDiveArticle key={article.id} article={article} category={category} /></div>)}
             </div>
         </Layout>
     )
