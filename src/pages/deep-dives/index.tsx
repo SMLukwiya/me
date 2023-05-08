@@ -11,7 +11,7 @@ export default function DeepDives() {
 
     return (
         <Layout>
-            <div className="w-full md:w-3/4 m-auto flex flex-wrap gap-4 px-4 justify-center">
+            <div className="w-full md:w-3/4 m-auto flex flex-wrap gap-4 px-4 justify-start">
                 {categories?.map((category) => 
                     <Card
                         image={`/${category.name.toLowerCase()}.png`}
@@ -37,7 +37,7 @@ interface CardParams {
 function Card({image, title, bgColor, active, path}: CardParams) {
     return (
         
-        <div className="w-full md:w-[45%] h-52 bg-contain bg-no-repeat border border-slate-300 rounded-md overflow-hidden">
+        <div className="w-full md:w-[45%] h-64 bg-contain bg-no-repeat border border-slate-300 rounded-xl overflow-hidden">
             <button 
                 className="w-full h-full"
                 disabled={!active}

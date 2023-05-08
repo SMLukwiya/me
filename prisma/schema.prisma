@@ -95,20 +95,11 @@ model Article {
     updatedAt   DateTime @updatedAt
 }
 
-// change to enum community or personal
-model ProjectCategory {
-    id       String    @id @default(cuid())
-    name     String
-    projects Project[]
-}
-
 model Project {
-    id          String          @id @default(cuid())
+    id          String  @id @default(cuid())
     title       String
-    description String          @db.Text
+    description String  @db.Text
     githubLink  String?
     liveLink    String?
     tag         String
-    category    ProjectCategory @relation(fields: [categoryId], references: [id])
-    categoryId  String
 }
