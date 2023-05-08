@@ -1,14 +1,26 @@
 import Layout from "@/components/Layout"
+import DeepDiveArticle from "@/components/deep-dives/DeepDiveArticle"
+import { WrapperLoader } from "@/components/ui/Loader"
+import { api } from "@/utils/api"
 import { useRouter } from "next/router"
 
 
 export default function Category() {
-    const router = useRouter()
-    console.log(router)
+    const {query} = useRouter()
+    const category = query.category as string
+    const {data: articles, isFetching} = useGetDeepDiveArticles(category)
+
+    if (isFetching) return <WrapperLoader />
 
     return (
         <Layout>
-            Category
+            <div className="flex flex-wrap gap-3 w-4/5 m-auto justify-between">
+                {articles?.map((article) => <DeepDiveArticle key={article.id} article={article} category={category} />)}
+            </div>
         </Layout>
     )
+}
+
+export function useGetDeepDiveArticles(id: string) {
+    return api.deepDives.list.useQuery({categoryId: id})
 }

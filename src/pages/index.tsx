@@ -38,7 +38,7 @@ export default function Home({quotes}: {quotes: Quote[]}) {
   }
   
   return (
-    <div className="flex flex-col bg-[url('/bg-morphism.png')] h-screen w-screen bg-cover bg-no-repeat md:block flex-wrap overflow-hidden text-center lg:text-left">
+    <div className="flex flex-wrap flex-col bg-[url('/bg-morphism.png')] h-screen w-screen bg-cover bg-no-repeat md:block overflow-hidden text-center lg:text-left">
       <NavBar />
       <div className="flex lg:flex-1 flex-col-reverse lg:flex-row justify-between items-center mx-16 lg:mx-24 lg:mt-20">
         <div className="w-full lg:w-1/2">

@@ -1,25 +1,26 @@
 import Layout from "@/components/Layout"
+import { useGetAllCategories } from "@/components/deep-dives/NewDeepDiveForm";
+import { WrapperLoader } from "@/components/ui/Loader";
 import Image from "next/image"
 import Link from "next/link";
 
 export default function DeepDives() {
+    const {data: categories, isFetching} = useGetAllCategories()
+
+    if (isFetching) return <WrapperLoader />
+
     return (
         <Layout>
-            <div className="w-full md:w-3/4 m-auto flex gap-4">
-                <Card 
-                    image="/react.png"
-                    title="React"
-                    bgColor="bg-sky-500"
-                    active
-                    path="deep-dives/react"
+            <div className="w-full md:w-3/4 m-auto flex flex-wrap gap-4 px-4 justify-center">
+                {categories?.map((category) => 
+                    <Card
+                        image={`/${category.name.toLowerCase()}.png`}
+                        title={category.name}
+                        bgColor="bg-sky-500"
+                        active
+                        path={`deep-dives/${category.id}`}
                     />
-                <Card
-                    image="/javascript.png"
-                    title="JS"
-                    bgColor="bg-sky-500"
-                    active
-                    path="deep-dives/javascript"
-                />
+                )}
             </div>
         </Layout>
     )
@@ -36,7 +37,7 @@ interface CardParams {
 function Card({image, title, bgColor, active, path}: CardParams) {
     return (
         
-        <div className="w-1/2 h-52 bg-contain bg-no-repeat border border-slate-300 rounded-md overflow-hidden">
+        <div className="w-full md:w-[45%] h-52 bg-contain bg-no-repeat border border-slate-300 rounded-md overflow-hidden">
             <button 
                 className="w-full h-full"
                 disabled={!active}
