@@ -1,20 +1,40 @@
 import NavBar from "@/components/nav/Navbar";
 import Button from "@/components/ui/Button";
 import { api } from "@/utils/api";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+interface Quote {
+  content: string;
+  author: string;
+}
 
 let quote = {
   content: 'We make a living by what we get, but we make a life by what we give.',
   author: "Winston Churchill"
 }
 
-export default function Home() {
-  const {data: quotes, isFetching} = useGetQuotes();
+export default function Home({quotes}: {quotes: Quote[]}) {
+  // const {data: quotes, isFetching} = useGetQuotes();
+  const [count, setCount] = useState(0)
 
   const cats = ['dab', 'skate', 'shades']
   const cat = cats[Math.floor(Math.random() * 3)]
 
-  if (quotes) {
-    quote = quotes[Math.floor(Math.random() * 25)]
+  useEffect(() => {
+    if (quotes && quotes.length) {
+      const interval = setInterval(() => {
+        if (quotes && count < quotes.length) {
+          setCount(count => count+1)
+        }
+      }, 15000)
+
+      return () => clearInterval(interval)
+    }
+  }, [])
+
+  if (quotes && quotes.length) {
+    quote = {...quote, ...quotes[count]}
   }
   
   return (
@@ -55,4 +75,24 @@ function DearCats({name}: {name: string}) {
 
 function useGetQuotes() {
   return api.quotes.list.useQuery()
+}
+
+export async function getStaticProps() {
+  try {
+    const {data} = await axios.get("https://api.quotable.io/quotes/random?limit=25");
+
+    return {
+      props: {
+        quotes: data,
+        revalidate: 300
+      }
+    }
+  } catch (e) {
+    return {
+      props: {
+        quotes: []
+      }
+    }
+  }
+  
 }
