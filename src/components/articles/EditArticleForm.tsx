@@ -5,22 +5,25 @@ import Textbox from "../ui/Textbox";
 import Button from "../ui/Button";
 import { api } from "@/utils/api";
 import { ArticleRequest, ArticleUpdate, articleCreateSchema } from "@/schemas/article.schema";
+import { useRouter } from "next/router";
 
 interface FormValues {
     formValues: ArticleUpdate
 }
 
 export default function EditArticleForm({formValues}: FormValues) {
+    const router = useRouter()
     const form = useForm<ArticleRequest>({
         defaultValues: formValues,
         resolver: zodResolver(articleCreateSchema)
     })
-    const createArticle = useCreateArticle()
+    const updateArticle = useEditArticle()
 
     async function onSubmitHandler(data: ArticleRequest) {
-        createArticle.mutate(data, {
-            onSuccess: () => {
+        updateArticle.mutate({...data, id: formValues.id}, {
+            onSuccess: (response) => {
                 form.reset()
+                router.push(`/articles/${response.id}`)
             }
         })
     }
@@ -64,8 +67,8 @@ export default function EditArticleForm({formValues}: FormValues) {
                 <div className="flex justify-between">
                     <Button
                         type="submit"
-                        disabled={createArticle.isLoading}>
-                        Create
+                        disabled={updateArticle.isLoading}>
+                        Update
                     </Button>
                     <Button>Preview</Button>
                 </div>
@@ -74,10 +77,10 @@ export default function EditArticleForm({formValues}: FormValues) {
     )
 }
 
-export function useCreateArticle() {
+export function useEditArticle() {
     const utils = api.useContext()
 
-    return api.articles.create.useMutation({
+    return api.articles.update.useMutation({
         onSuccess: async () => {
             await utils.articles.list.invalidate()
         }

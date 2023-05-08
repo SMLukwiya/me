@@ -51,6 +51,7 @@ export const articlesRouter = createTRPCRouter({
           authorName,
         },
       });
+      return response;
     }),
   delete: protectedProcedure
     .input(z.object({ id: z.string() }))
