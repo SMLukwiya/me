@@ -1,12 +1,12 @@
-import Layout from "@/project/Layout";
+import Layout from "@/components/Layout";
 import Link from "next/link";
 import Image from "next/image";
-import { PROJECT_TAG } from "@/schemas/project.schema";
+import { Project_Tag } from "@/schemas/project.schema";
 
 export default function Projects() {
     return (
         <Layout>
-            <div className="w-3/4 mx-auto flex flex-wrap gap-4">
+            <div className="w-3/4 mx-auto flex flex-wrap gap-4 px-10">
                 <Card
                     image="/community.png"
                     title="Community"
@@ -30,7 +30,7 @@ interface CardParams {
     image: string;
     title: string;
     path: string;
-    tag: PROJECT_TAG;
+    tag: Project_Tag;
     description: string;
 }
 

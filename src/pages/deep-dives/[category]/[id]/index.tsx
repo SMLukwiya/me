@@ -1,4 +1,4 @@
-import Layout from "@/project/Layout"
+import Layout from "@/components/Layout"
 import DeepDiveArticleDetail from "@/components/deep-dives/DeepArticleDetails"
 import { WrapperLoader } from "@/components/ui/Loader"
 import { api } from "@/utils/api"
@@ -14,7 +14,7 @@ export default function Article() {
 
     return (
         <Layout>
-            <div className="w-3/4 mx-auto">
+            <div className="w-3/4 mx-auto px-10">
                 {!article ? <h2>Not found</h2> : <DeepDiveArticleDetail article={article} />}
             </div>
         </Layout>

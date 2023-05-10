@@ -1,4 +1,4 @@
-import Layout from "@/project/Layout"
+import Layout from "@/components/Layout"
 import ArticleDetail from "@/components/articles/ArticleDetail"
 import { WrapperLoader } from "@/components/ui/Loader"
 import { api } from "@/utils/api"

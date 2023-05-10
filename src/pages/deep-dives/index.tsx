@@ -1,4 +1,4 @@
-import Layout from "@/project/Layout"
+import Layout from "@/components/Layout"
 import { useGetAllCategories } from "@/components/deep-dives/NewDeepDiveForm";
 import { WrapperLoader } from "@/components/ui/Loader";
 import Image from "next/image"
@@ -11,7 +11,7 @@ export default function DeepDives() {
 
     return (
         <Layout>
-            <div className="w-full md:w-3/4 m-auto flex flex-wrap gap-4 px-4 justify-start">
+            <div className="w-full md:w-3/4 m-auto flex flex-wrap gap-4 px-10 justify-start">
                 {categories?.map((category) => 
                     <Card
                         image={`/${category.name.toLowerCase()}.png`}
