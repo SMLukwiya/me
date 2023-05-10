@@ -8,7 +8,7 @@ export const projectSchema = z.object({
   description: z.string(),
   githubLink: z.string().nullable(),
   liveLink: z.string().nullable(),
-  category: projectTagSchema,
+  tag: projectTagSchema,
 });
 
 export const projectCreateSchema = z.object({
@@ -16,7 +16,7 @@ export const projectCreateSchema = z.object({
   description: z.string(),
   githubLink: z.string().optional(),
   liveLink: z.string().optional(),
-  category: projectTagSchema,
+  tag: projectTagSchema,
 });
 
 export const projectUpdateSchema = z.object({
@@ -25,7 +25,7 @@ export const projectUpdateSchema = z.object({
   description: z.string(),
   githubLink: z.string().optional(),
   liveLink: z.string().optional(),
-  category: projectTagSchema,
+  tag: projectTagSchema,
 });
 
 export const projectListSchema = z.array(projectSchema);
