@@ -1,15 +1,13 @@
 import Layout from "@/components/Layout";
-import { PROJECT_TAG } from "@/schemas/project.schema";
+import { Project_Tag } from "@/schemas/project.schema";
 import { api } from "@/utils/api";
 import { useRouter } from "next/router";
 
 
 export default function Projects() {
     const {query} = useRouter()
-    const tag = query.tag as PROJECT_TAG
+    const tag = query.tag as Project_Tag
     const {data: projects, isFetching} = useGetProjects(tag)
-
-    console.log(projects)
 
     return (
         <Layout>
@@ -25,6 +23,6 @@ function Project() {
 
 }
 
-export function useGetProjects(tag: PROJECT_TAG) {
+export function useGetProjects(tag: Project_Tag) {
     return api.projects.list.useQuery({tag})
 }

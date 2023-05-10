@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import Layout from "@/project/Layout";
 import { api } from "@/utils/api";
 import Article from "@/components/articles/Article";
 import { WrapperLoader } from "@/components/ui/Loader";

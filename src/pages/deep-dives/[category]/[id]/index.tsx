@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout"
+import Layout from "@/project/Layout"
 import DeepDiveArticleDetail from "@/components/deep-dives/DeepArticleDetails"
 import { WrapperLoader } from "@/components/ui/Loader"
 import { api } from "@/utils/api"

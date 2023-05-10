@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout"
+import Layout from "@/project/Layout"
 import { useGetAllCategories } from "@/components/deep-dives/NewDeepDiveForm";
 import { WrapperLoader } from "@/components/ui/Loader";
 import Image from "next/image"

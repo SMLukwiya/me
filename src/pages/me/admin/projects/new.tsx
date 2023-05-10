@@ -1,5 +1,4 @@
-import Layout from "@/project/Layout";
-import NewDeepDiveForm from "@/components/deep-dives/NewDeepDiveForm";
+import NewProjectForm from "@/components/project/NewProjectForm";
 import { env } from "@/env.mjs";
 import { getServerAuthSession } from "@/server/auth";
 import { GetServerSidePropsContext } from "next";
@@ -7,9 +6,10 @@ import { GetServerSidePropsContext } from "next";
 
 export default function CreateArticle() {
     return (
-        <Layout>
-            <NewDeepDiveForm />
-        </Layout>
+        <div className="bg-slate-900 py-5">
+            <h1 className="text-xl text-center text-slate-200">New Article</h1>
+            <NewProjectForm />
+        </div>
     )
 }
 

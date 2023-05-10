@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import Layout from "@/project/Layout";
 import Link from "next/link";
 import Image from "next/image";
 import { PROJECT_TAG } from "@/schemas/project.schema";

@@ -40,7 +40,7 @@ export const projectRouter = createTRPCRouter({
         },
       });
 
-      return response.id;
+      return response;
     }),
   update: protectedProcedure
     .input(projectUpdateSchema)
@@ -56,6 +56,8 @@ export const projectRouter = createTRPCRouter({
           liveLink,
         },
       });
+
+      return response;
     }),
   delete: protectedProcedure
     .input(z.object({ id: z.string() }))

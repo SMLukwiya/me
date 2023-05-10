@@ -30,8 +30,8 @@ export const projectUpdateSchema = z.object({
 
 export const projectListSchema = z.array(projectSchema);
 
-export type PROJECT = z.infer<typeof projectSchema>;
-export type PROJECTREQUEST = z.infer<typeof projectCreateSchema>;
-export type PROJECTUPDATE = z.infer<typeof projectUpdateSchema>;
-export type PROJECTLIST = z.infer<typeof projectListSchema>;
-export type PROJECT_TAG = z.infer<typeof projectTagSchema>;
+export type Project = z.infer<typeof projectSchema>;
+export type ProjectRequest = z.infer<typeof projectCreateSchema>;
+export type ProjectUpdate = z.infer<typeof projectUpdateSchema>;
+export type ProjectList = z.infer<typeof projectListSchema>;
+export type Project_Tag = z.infer<typeof projectTagSchema>;

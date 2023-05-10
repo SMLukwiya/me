@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import Layout from "@/project/Layout";
 
 export default function Me() {
     return (
