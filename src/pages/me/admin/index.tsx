@@ -1,4 +1,4 @@
-import Layout from "@/project/Layout";
+import Layout from "@/components/Layout";
 import Button from "@/components/ui/Button";
 import { useSession, signOut, signIn } from "next-auth/react";
 

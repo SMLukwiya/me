@@ -6,10 +6,11 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 import Button from "../ui/Button";
 import { api } from "@/utils/api";
+import { useAuth } from "@/hooks/useAuth";
 
 
 export default function DeepDiveArticleDetail({article}: {article: ArticleResponse}) {
-    const {status} = useSession()
+    const isAdmin = useAuth()
     let tags: string[] = []
 
     if (article.tags) {
@@ -20,14 +21,14 @@ export default function DeepDiveArticleDetail({article}: {article: ArticleRespon
         <div>
             <h1 className="text-3xl text-slate-100 mb-4">{article.title}</h1>
             <p className="text-slate-100">{article.description}</p>
-            {tags.length && tags.map((tag) => <span className="bg-slate-200 p-1 rounded-lg mr-2 text-slate-600">{tag}</span>)}
+            {tags.length && tags.map((tag) => <span key={tag} className="bg-slate-200 p-1 rounded-lg mr-2 text-slate-600">{tag}</span>)}
             <div className="flex items-center justify-between mb-14 mt-4">
                 <p className="text-sm text-slate-300">By {article.authorName}</p>
                 {article.updatedAt && <p className="text-sm text-slate-300">Posted: {formatTime(article.updatedAt)}</p>}
                 
             </div>
             <ReactMarkdown children={article.content} className={indexCss["markdown-body"]} />
-            {status === "authenticated" &&
+            {isAdmin &&
                 <div className="mt-7 flex items-center gap-4">
                     <Link href={{
                         pathname: `/me/admin/deep-dives/${article.id}/edit`,

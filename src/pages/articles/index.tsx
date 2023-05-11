@@ -17,7 +17,8 @@ export default function Articles() {
             <div className="flex flex-wrap gap-3 w-4/5 m-auto justify-between">
                 {articles?.map((article) => 
                     <div 
-                        className="w-full sm:w-[45%] lg:w-[30%] rounded-lg" key={article.id}
+                        className="w-full sm:w-[45%] lg:w-[30%] rounded-lg" 
+                        key={article.id}
                         >
                         <Article {...article} />
                     </div>)

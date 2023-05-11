@@ -1,4 +1,4 @@
-import Layout from "@/project/Layout";
+import Layout from "@/components/Layout";
 import EditArticleForm from "@/components/articles/EditArticleForm";
 import EditDeepArticleForm from "@/components/deep-dives/EditDeepArticleForm";
 import { useRouter } from "next/router";

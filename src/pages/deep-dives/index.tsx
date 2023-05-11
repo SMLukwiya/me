@@ -14,6 +14,7 @@ export default function DeepDives() {
             <div className="w-full md:w-3/4 m-auto flex flex-wrap gap-4 px-10 justify-start">
                 {categories?.map((category) => 
                     <Card
+                        key={category.id}
                         image={`/${category.name.toLowerCase()}.png`}
                         title={category.name}
                         bgColor="bg-sky-500"

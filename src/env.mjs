@@ -33,7 +33,7 @@ export const env = createEnv({
    * `NEXT_PUBLIC_`.
    */
   client: {
-    // NEXT_PUBLIC_CLIENTVAR: z.string().min(1),
+    NEXT_PUBLIC_WHITELIST_EMAIL: z.string(),
   },
 
   /**
@@ -48,6 +48,7 @@ export const env = createEnv({
     GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
     GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
     QUOTES_API: process.env.QUOTES_API,
-    WHITELIST_EMAIL: process.env.WHITELIST_EMAIL
+    WHITELIST_EMAIL: process.env.WHITELIST_EMAIL,
+    NEXT_PUBLIC_WHITELIST_EMAIL: process.env.NEXT_PUBLIC_WHITELIST_EMAIL
   },
 });

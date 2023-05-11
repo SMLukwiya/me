@@ -1,4 +1,4 @@
-import Layout from "@/project/Layout";
+import Layout from "@/components/Layout";
 import NewDeepDiveForm from "@/components/deep-dives/NewDeepDiveForm";
 import { env } from "@/env.mjs";
 import { getServerAuthSession } from "@/server/auth";
