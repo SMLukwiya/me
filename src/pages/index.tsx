@@ -3,6 +3,7 @@ import Button from "@/components/ui/Button";
 import Image from "next/image";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 interface Quote {
   content: string;
@@ -51,8 +52,8 @@ export default function Home({quotes}: {quotes: Quote[]}) {
             <div className="mt-8 lg:mt-12">
               <h1 className="text-slate-100 text-2xl">Check out the newest technical articles</h1>
               <div className="flex items-center justify-center lg:justify-start mt-4">
-                <Button>General</Button>
-                <Button>Deep dives</Button>
+                <Link href="/articles"><Button>General</Button></Link>
+                <Link href="/deep-dives"><Button>Deep dives</Button></Link>
               </div>
             </div>
           </div>
