@@ -9,8 +9,11 @@ const DynamicForm = dynamic(() => import("../../../../../components/deep-dives/E
 
 export default function EditArticle() {
     const {query} = useRouter()
+    let article;
 
-    const article = JSON.parse(query.article as string)
+    if (query.article) {
+        article = JSON.parse(query.article as string)
+    }
 
     return (
         <Layout>
