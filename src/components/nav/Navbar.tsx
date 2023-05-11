@@ -15,7 +15,6 @@ export default function NavBar() {
         return () => {window.removeEventListener('resize', handleResize)}
     }, [])
 
-    console.log('Navbar', width)
     return (
         <div className="flex items-center justify-between py-10 px-7">
             <div className="w-1/5">

@@ -49,10 +49,10 @@ export default function Home({quotes}: {quotes: Quote[]}) {
             </div>
 
             <div className="mt-8 lg:mt-12">
-              <h1 className="text-slate-100 text-2xl">Check out the latest in depth articles</h1>
+              <h1 className="text-slate-100 text-2xl">Check out the newest technical articles</h1>
               <div className="flex items-center justify-center lg:justify-start mt-4">
-                <Button>React</Button>
-                <Button>JavaScript</Button>
+                <Button>General</Button>
+                <Button>Deep dives</Button>
               </div>
             </div>
           </div>
