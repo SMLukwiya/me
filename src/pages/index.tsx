@@ -15,7 +15,6 @@ let quote = {
 }
 
 export default function Home({quotes}: {quotes: Quote[]}) {
-  // const {data: quotes, isFetching} = useGetQuotes();
   const [count, setCount] = useState(0)
 
   const cats = ['dab', 'skate', 'shades']
@@ -71,10 +70,6 @@ export default function Home({quotes}: {quotes: Quote[]}) {
 
 function DearCats({name}: {name: string}) {
   return <img src={name} alt="cool-cats" className="w-[200px] lg:w-[325px]"/>
-}
-
-function useGetQuotes() {
-  return api.quotes.list.useQuery()
 }
 
 export async function getStaticProps() {

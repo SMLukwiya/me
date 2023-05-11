@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout"
-import DeepDiveArticleDetail from "@/components/deep-dives/DeepArticleDetails"
+import DeepDiveArticleDetail from "@/components/deep-dives/DeepArticleDetail"
 import { WrapperLoader } from "@/components/ui/Loader"
 import { api } from "@/utils/api"
 import { useRouter } from "next/router"

@@ -1,6 +1,11 @@
 import Layout from "@/components/Layout";
-import EditArticleForm from "@/components/articles/EditArticleForm";
 import { useRouter } from "next/router";
+import dynamic from "next/dynamic";
+import { WrapperLoader } from "@/components/ui/Loader";
+
+const DynamicForm = dynamic(() => import("../../../../../components/articles/EditArticleForm"), {
+    loading: () => <WrapperLoader />
+})
 
 export default function EditArticle() {
     const {query} = useRouter()
@@ -11,7 +16,7 @@ export default function EditArticle() {
     return (
         <Layout>
             <h1 className="text-xl text-slate-200 font-semibold text-center">Edit Article</h1>
-            <EditArticleForm formValues={article} />
+            <DynamicForm formValues={article} />
         </Layout>
     )
 }

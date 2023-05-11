@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout"
-import { useGetAllCategories } from "@/components/deep-dives/NewDeepDiveForm";
+import { useGetAllCategories } from "@/components/deep-dives/NewDeepArticleForm";
 import { WrapperLoader } from "@/components/ui/Loader";
 import Image from "next/image"
 import Link from "next/link";

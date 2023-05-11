@@ -1,14 +1,19 @@
 import Layout from "@/components/Layout";
-import NewDeepDiveForm from "@/components/deep-dives/NewDeepDiveForm";
+import { WrapperLoader } from "@/components/ui/Loader";
 import { env } from "@/env.mjs";
 import { getServerAuthSession } from "@/server/auth";
 import { GetServerSidePropsContext } from "next";
+import dynamic from "next/dynamic";
+
+const DynamicForm = dynamic(() => import("../../../../components/deep-dives/NewDeepArticleForm"), {
+    loading: () => <WrapperLoader />
+})
 
 
 export default function CreateArticle() {
     return (
         <Layout>
-            <NewDeepDiveForm />
+            <DynamicForm />
         </Layout>
     )
 }

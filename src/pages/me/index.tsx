@@ -119,7 +119,7 @@ export default function Me() {
                             which turned out to be a life-changing experience for me.
                             I decided to take a leap of faith and switch my path, which led me down an exciting and rewarding path.
                             After the bootcamp, I continued to teach myself and dive deeper into the world of software development. 
-                            I started focussing on learning everything I could about programming, and I was particularly inspired by 
+                            I started focussing on learning everything I could about programming, and I draw inspiration from 
                             developers like Kent C Dodds. I started studying React, React Native, and Node.js
                             Looking back on my journey so far, I'm proud of how far I've come and excited about what the future holds. 
                             I know that there will always be new challenges and opportunities to learn and grow, and I'm eager to 

@@ -6,7 +6,7 @@ import Button from "../ui/Button";
 import { api } from "@/utils/api";
 import { DeepDiveRequest, DeepDiveUpdate, deepDiveCreateSchema, } from "@/schemas/deep-dive.schema";
 import { useRouter } from "next/router";
-import { useGetAllCategories } from "./NewDeepDiveForm";
+import { useGetAllCategories } from "./NewDeepArticleForm";
 
 interface FormValues {
     formValues: DeepDiveUpdate

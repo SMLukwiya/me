@@ -1,10 +1,7 @@
 import Layout from "@/components/Layout";
 import { api } from "@/utils/api";
-import Article from "@/components/articles/Article";
+import ArticleComponent from "@/components/articles/ArticleComponent";
 import { WrapperLoader } from "@/components/ui/Loader";
-
-// 
-import {sampleArticles} from "../../../.data/sampleArticles"
 
 export default function Articles() {
     const {data: articles, isFetching} = useGetArticles()
@@ -17,10 +14,10 @@ export default function Articles() {
             <div className="flex flex-wrap gap-3 w-4/5 m-auto justify-between">
                 {articles?.map((article) => 
                     <div 
-                        className="w-full sm:w-[45%] lg:w-[30%] rounded-lg" 
+                        className="w-full rounded-lg" 
                         key={article.id}
                         >
-                        <Article {...article} />
+                        <ArticleComponent {...article} />
                     </div>)
                 }
             </div>

@@ -1,14 +1,19 @@
 import NewProjectForm from "@/components/project/NewProjectForm";
+import { WrapperLoader } from "@/components/ui/Loader";
 import { env } from "@/env.mjs";
 import { getServerAuthSession } from "@/server/auth";
 import { GetServerSidePropsContext } from "next";
+import dynamic from "next/dynamic";
 
+const DynamicForm = dynamic(() => import("../../../../components/project/NewProjectForm"), {
+    loading: () => <WrapperLoader />
+})
 
 export default function CreateArticle() {
     return (
         <div className="bg-slate-900 py-5">
             <h1 className="text-xl text-center text-slate-200">New Article</h1>
-            <NewProjectForm />
+            <DynamicForm />
         </div>
     )
 }

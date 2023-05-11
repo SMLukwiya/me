@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import Project from "@/components/project/Project";
+import ProjectComponent from "@/components/project/ProjectComponent";
 import { WrapperLoader } from "@/components/ui/Loader";
 import { Project_Tag } from "@/schemas/project.schema";
 import { api } from "@/utils/api";
@@ -18,7 +18,7 @@ export default function Projects() {
             <div className="w-full flex md:w-3/4 mx-auto px-10">
                 {projects?.map((project) => 
                     <div key={project.id} className="w-[45%]">
-                        <Project
+                        <ProjectComponent
                             id={project.id}
                             title={project.title}
                             description={project.description}
