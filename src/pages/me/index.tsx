@@ -44,7 +44,7 @@ const funFacts = [
         title: 'Basketball and Track',
         text: `Outside of work, I like to play competitive basketball and run track sometimes.
             I've been playing for several years and I have some mean handles, I have twisted many
-            ankles in my days, they nicknamed me "The Ankle Taker". Playing ball is something that 
+            ankles in my days, so it's best to move with care near me😄. Playing ball is something that 
             I picked up in secondary school
             I find that playing basketball also helps me stay focused and disciplined, which I 
             think translates well to my work as a software developer.
@@ -64,7 +64,7 @@ const funFacts = [
         iconPath: <path d="M288 0h112c8.8 0 16 7.2 16 16v48c0 8.8-7.2 16-16 16h-80v15.5l90.3 64.5H512c35.3 0 64 28.7 64 64v224c0 35.3-28.7 64-64 64H336V400c0-26.5-21.5-48-48-48s-48 21.5-48 48v112H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h101.7L256 95.5V32c0-17.7 14.3-32 32-32zm48 240c0-26.5-21.5-48-48-48s-48 21.5-48 48 21.5 48 48 48 48-21.5 48-48zM80 224c-8.8 0-16 7.2-16 16v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16H80zm368 16v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16zM80 352c-8.8 0-16 7.2-16 16v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16H80zm384 0c-8.8 0-16 7.2-16 16v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-32z" />
     },
     {
-        title: 'Speaking at conferences',
+        title: 'About Speaking',
         text:  `
             I've been following a lot of industry leaders and experts, and I've been really amazed by 
             the insights and perspectives they bring. I believe that speaking at technical conferences would not 
