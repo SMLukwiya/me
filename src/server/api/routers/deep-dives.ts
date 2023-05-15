@@ -34,7 +34,7 @@ export const deepDivesRouter = createTRPCRouter({
       return response.id;
     }),
 
-  listCategory: protectedProcedure.query(async ({ ctx }) => {
+  listCategory: publicProcedure.query(async ({ ctx }) => {
     const response = await ctx.prisma.deepDiveCategory.findMany();
     return response;
   }),
