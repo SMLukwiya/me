@@ -4,10 +4,10 @@ import Link from "next/link";
 
 
 export default function Article(article: ArticleResponse) {
-    const {id, title, description, authorName} = article;
+    const {title, description, authorName, slug} = article;
 
     return (
-        <Link href={`/articles/${id}`}>
+        <Link href={`/articles/${slug}`}>
             <div className="relative bg-cover bg-no-repeat w-full md:w-[45%] h-64 rounded-lg overflow-hidden border border-slate-400">
                 <Image src="/code.png" alt="article" fill />
                 <div className="absolute w-full flex flex-col justify-end bg-gradient-to-t from-black/80 to-black/40 h-full p-4">

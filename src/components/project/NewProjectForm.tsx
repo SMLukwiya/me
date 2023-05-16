@@ -5,6 +5,7 @@ import Button from "../ui/Button";
 import { api } from "@/utils/api";
 import { ProjectRequest } from "@/schemas/project.schema";
 import { useRouter } from "next/router";
+import { formatSlug } from "@/utils/formatSlug";
 
 const tags = ["personal", "community"]
 
@@ -14,7 +15,7 @@ export default function NewProjectForm() {
     const createProject = useCreateProject()
 
     async function onSubmitHandler(data: ProjectRequest) {
-        createProject.mutate(data, {
+        createProject.mutate({...data, slug: formatSlug(data.title)}, {
             onSuccess: (response) => {
                 form.reset()
                 router.push(`/projects/${response.tag}`)

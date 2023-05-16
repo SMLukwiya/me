@@ -21,6 +21,6 @@ export default function Article() {
     )
 }
 
-function useGetDeepDiveArticle(id: string) {
-    return api.deepDives.read.useQuery({id})
+function useGetDeepDiveArticle(slug: string) {
+    return api.deepDives.read.useQuery({slug})
 }

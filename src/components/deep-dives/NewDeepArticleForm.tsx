@@ -6,6 +6,7 @@ import { api } from "@/utils/api";
 import { DeepDiveRequest } from "@/schemas/deep-dive.schema";
 import { WrapperLoader } from "../ui/Loader";
 import { useRouter } from "next/router";
+import { formatSlug } from "@/utils/formatSlug";
 
 export default function NewDeepDiveForm() {
     const router = useRouter()
@@ -18,7 +19,7 @@ export default function NewDeepDiveForm() {
     if (isFetching) return <WrapperLoader />
 
     async function onSubmitHandler(data: DeepDiveRequest) {
-        createArticle.mutate(data, {
+        createArticle.mutate({...data, slug: formatSlug(data.title)}, {
             onSuccess: () => {
                 form.reset()
             }
@@ -26,7 +27,7 @@ export default function NewDeepDiveForm() {
     }
 
     async function onCategorySubmitHandler(data: {category: string}) {
-        createCategory.mutate(data, {
+        createCategory.mutate({...data, slug: formatSlug(data.category)}, {
             onSuccess: () => {
                 categoryForm.reset()
                 router.push("/deep-dives")

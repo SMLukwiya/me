@@ -21,6 +21,6 @@ export default function Article() {
     )
 }
 
-function useGetArticle(id: string) {
-    return api.articles.read.useQuery({id})
+function useGetArticle(slug: string) {
+    return api.articles.read.useQuery({slug})
 }

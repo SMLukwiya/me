@@ -15,12 +15,14 @@ export default function Category() {
     return (
         <Layout>
             <div className="flex flex-wrap gap-3 w-4/5 m-auto justify-start px-10">
-                {articles?.map((article) => <div key={article.id} className="w-full md:w-[45%]"><DeepDiveArticleComponent key={article.id} article={article} category={category} /></div>)}
+                {articles?.map((article) => <div key={article.id} className="w-full md:w-[45%]">
+                    <DeepDiveArticleComponent key={article.id} article={article} category={category} /></div>
+                )}
             </div>
         </Layout>
     )
 }
 
-export function useGetDeepDiveArticles(id: string) {
-    return api.deepDives.list.useQuery({categoryId: id})
+export function useGetDeepDiveArticles(category: string) {
+    return api.deepDives.list.useQuery({categorySlug: category})
 }

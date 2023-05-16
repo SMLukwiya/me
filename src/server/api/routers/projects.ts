@@ -13,9 +13,12 @@ import {
 import { projectCreateSchema } from "@/schemas/project.schema";
 
 export const projectRouter = createTRPCRouter({
-  read: publicProcedure.input(z.object({ id: z.string() })).query(({ ctx }) => {
-    return "Projects";
-  }),
+  read: publicProcedure
+    .input(z.object({ slug: z.string() }))
+    .query(({ ctx }) => {
+      return "Projects";
+    }),
+
   list: publicProcedure
     .input(z.object({ tag: projectTagSchema }))
     .query(async ({ ctx, input }) => {
@@ -26,10 +29,11 @@ export const projectRouter = createTRPCRouter({
       });
       return response;
     }),
+
   create: protectedProcedure
     .input(projectCreateSchema)
     .mutation(async ({ ctx, input }) => {
-      const { title, description, githubLink, liveLink, tag } = input;
+      const { title, description, githubLink, liveLink, tag, slug } = input;
       const response = await ctx.prisma.project.create({
         data: {
           title,
@@ -37,15 +41,17 @@ export const projectRouter = createTRPCRouter({
           githubLink,
           liveLink,
           tag,
+          slug,
         },
       });
 
       return response;
     }),
+
   update: protectedProcedure
     .input(projectUpdateSchema)
     .mutation(async ({ ctx, input }) => {
-      const { id, title, description, githubLink, liveLink, tag } = input;
+      const { id, title, description, githubLink, liveLink, tag, slug } = input;
       const response = await ctx.prisma.project.update({
         where: { id },
         data: {
@@ -54,11 +60,13 @@ export const projectRouter = createTRPCRouter({
           tag,
           githubLink,
           liveLink,
+          slug,
         },
       });
 
       return response;
     }),
+
   delete: protectedProcedure
     .input(z.object({ id: z.string() }))
     .mutation(async ({ input, ctx }) => {

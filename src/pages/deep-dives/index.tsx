@@ -19,7 +19,7 @@ export default function DeepDives() {
                         title={category.name}
                         bgColor="bg-sky-500"
                         active
-                        path={`deep-dives/${category.id}`}
+                        path={`deep-dives/${category.slug}`}
                     />
                 )}
             </div>

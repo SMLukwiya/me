@@ -1,8 +1,10 @@
 import Link from "next/link"
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react"
 import {slide as Menu} from "react-burger-menu"
 
 export default function NavBar() {
+    const router = useRouter()
     const [width, setWidth] = useState<number>();
 
     useEffect(() => {
@@ -15,6 +17,9 @@ export default function NavBar() {
         return () => {window.removeEventListener('resize', handleResize)}
     }, [])
 
+    const className = "mx-3 hover:text-white hover:underline hover:underline-offset-4 transition"
+    const activeClassName = 'underline underline-offset-4'
+
     return (
         <div className="flex items-center justify-between py-10 px-7">
             <div className="w-1/5">
@@ -26,10 +31,10 @@ export default function NavBar() {
                 <NavBarMobile />
                 :
                 <div className="flex items-center justify-end text-slate-200 w-4/5 text-lg">
-                    <Link href="/articles"><p className="mx-3 hover:text-white hover:underline hover:underline-offset-4 transition">Articles</p></Link>
-                    <Link href="/deep-dives"><p className="mx-3 hover:text-white hover:underline hover:underline-offset-4 transition">Deep dives</p></Link>
-                    <Link href="/projects"><p className="mx-3 hover:text-white hover:underline hover:underline-offset-4 transition">Projects</p></Link>
-                    <Link href="/me"><p className="mx-3 hover:text-white hover:underline hover:underline-offset-4 transition">About</p></Link>
+                    <Link href="/articles"><p className={`${className} ${router.pathname === "/articles" ? activeClassName : ''}`}>Articles</p></Link>
+                    <Link href="/deep-dives"><p className={`${className} ${router.pathname === "/deep-dives" ? activeClassName : ''}`}>Deep dives</p></Link>
+                    <Link href="/projects"><p className={`${className} ${router.pathname === "/projects" ? activeClassName : ''}`}>Projects</p></Link>
+                    <Link href="/me"><p className={`${className} ${router.pathname === "/me" ? activeClassName : ''}`}>About</p></Link>
                     <Link href="/"><button className="w-8 h-8 rounded-full bg-slate-600" disabled></button></Link>
             </div>
             }

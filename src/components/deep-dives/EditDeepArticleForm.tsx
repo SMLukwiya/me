@@ -7,6 +7,7 @@ import { api } from "@/utils/api";
 import { DeepDiveRequest, DeepDiveUpdate, deepDiveCreateSchema, } from "@/schemas/deep-dive.schema";
 import { useRouter } from "next/router";
 import { useGetAllCategories } from "./NewDeepArticleForm";
+import { formatSlug } from "@/utils/formatSlug";
 
 interface FormValues {
     formValues: DeepDiveUpdate
@@ -22,7 +23,7 @@ export default function EditDeepArticleForm({formValues}: FormValues) {
     const {data: categories} = useGetAllCategories()
 
     async function onSubmitHandler(data: DeepDiveRequest) {
-        updateArticle.mutate({...data, id: formValues.id}, {
+        updateArticle.mutate({...data, id: formValues.id, slug: formatSlug(data.title)}, {
             onSuccess: (response) => {
                 form.reset()
                 router.push(`/deep-dives/${response.categoryId}/${response.id}`)
@@ -31,7 +32,7 @@ export default function EditDeepArticleForm({formValues}: FormValues) {
     }
 
     return (
-        <form onSubmit={form.handleSubmit(onSubmitHandler)}>
+        <form onSubmit={form.handleSubmit(onSubmitHandler, (e) => console.log(e))}>
             <div className="w-4/5 md:w-1/2 m-auto">
                 <Input 
                     {...form.register("title")}

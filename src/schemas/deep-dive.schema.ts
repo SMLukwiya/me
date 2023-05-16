@@ -8,6 +8,7 @@ export const deepDiveSchema = z.object({
   content: z.string(),
   authorName: z.string(),
   tags: z.string().nullable(),
+  slug: z.string(),
   createdAt: z.string().or(z.date()),
   updatedAt: z.string().or(z.date()),
 });
@@ -17,6 +18,7 @@ export const deepDiveCreateSchema = z.object({
   description: z.string(),
   categoryId: z.string(),
   content: z.string(),
+  slug: z.string(),
   tags: z.string().optional(),
   authorName: z.string(),
 });
@@ -27,6 +29,7 @@ export const deepDiveUpdateSchema = z.object({
   description: z.string(),
   content: z.string(),
   authorName: z.string(),
+  slug: z.string(),
   tags: z.string().optional(),
 });
 

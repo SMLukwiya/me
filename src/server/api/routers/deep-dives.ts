@@ -13,11 +13,13 @@ import {
 export const deepDivesRouter = createTRPCRouter({
   // category
   createCategory: protectedProcedure
-    .input(z.object({ category: z.string() }))
+    .input(z.object({ category: z.string(), slug: z.string() }))
     .mutation(async ({ ctx, input }) => {
+      const { category, slug } = input;
       const response = await ctx.prisma.deepDiveCategory.create({
         data: {
-          name: input.category,
+          name: category,
+          slug,
         },
       });
 
@@ -40,20 +42,20 @@ export const deepDivesRouter = createTRPCRouter({
   }),
   // articles
   read: publicProcedure
-    .input(z.object({ id: z.string() }))
+    .input(z.object({ slug: z.string() }))
     .query(async ({ ctx, input }) => {
       const response = await ctx.prisma.deepDiveArticle.findUnique({
-        where: { id: input.id },
+        where: { slug: input.slug },
       });
 
       return response;
     }),
 
   list: publicProcedure
-    .input(z.object({ categoryId: z.string() }))
+    .input(z.object({ categorySlug: z.string() }))
     .query(async ({ ctx, input }) => {
       const response = await ctx.prisma.deepDiveArticle.findMany({
-        where: { categoryId: input.categoryId },
+        where: { categorySlug: input.categorySlug },
         include: { category: true },
       });
       return response;
@@ -62,8 +64,15 @@ export const deepDivesRouter = createTRPCRouter({
   create: protectedProcedure
     .input(deepDiveCreateSchema)
     .mutation(async ({ ctx, input }) => {
-      const { title, description, categoryId, content, tags, authorName } =
-        input;
+      const {
+        title,
+        description,
+        categoryId,
+        content,
+        tags,
+        authorName,
+        slug,
+      } = input;
       const response = await ctx.prisma.deepDiveArticle.create({
         data: {
           title,
@@ -71,6 +80,7 @@ export const deepDivesRouter = createTRPCRouter({
           content,
           authorName,
           tags,
+          slug,
           category: {
             connect: { id: categoryId },
           },
@@ -83,7 +93,7 @@ export const deepDivesRouter = createTRPCRouter({
   update: protectedProcedure
     .input(deepDiveUpdateSchema)
     .mutation(async ({ input, ctx }) => {
-      const { id, title, description, content, authorName, tags } = input;
+      const { id, title, description, content, authorName, tags, slug } = input;
       const response = await ctx.prisma.deepDiveArticle.update({
         where: { id },
         data: {
@@ -92,6 +102,7 @@ export const deepDivesRouter = createTRPCRouter({
           content,
           authorName,
           tags,
+          slug,
         },
       });
 

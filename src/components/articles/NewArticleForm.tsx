@@ -4,13 +4,14 @@ import Textbox from "../ui/Textbox";
 import Button from "../ui/Button";
 import { api } from "@/utils/api";
 import { ArticleRequest } from "@/schemas/article.schema";
+import { formatSlug } from "@/utils/formatSlug";
 
 export default function NewArticleForm() {
     const form = useForm<ArticleRequest>()
     const createArticle = useCreateArticle()
 
     async function onSubmitHandler(data: ArticleRequest) {
-        createArticle.mutate(data, {
+        createArticle.mutate({...data, slug: formatSlug(data.title)}, {
             onSuccess: () => {
                 form.reset()
             }

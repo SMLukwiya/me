@@ -45,8 +45,8 @@ export const env = createEnv({
     NODE_ENV: process.env.NODE_ENV,
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
-    GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
-    GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
+    GITHUB_CLIENT_ID: process.env.NODE_ENV === "development" ? process.env.GITHUB_CLIENT_ID_DEV : process.env.GITHUB_CLIENT_ID_PROD,
+    GITHUB_CLIENT_SECRET: process.env.NODE_ENV === "development" ? process.env.GITHUB_CLIENT_SECRET_DEV : process.env.GITHUB_CLIENT_SECRET_PROD,
     QUOTES_API: process.env.QUOTES_API,
     WHITELIST_EMAIL: process.env.WHITELIST_EMAIL,
     NEXT_PUBLIC_WHITELIST_EMAIL: process.env.NEXT_PUBLIC_WHITELIST_EMAIL
