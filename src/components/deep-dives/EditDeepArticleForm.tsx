@@ -26,7 +26,7 @@ export default function EditDeepArticleForm({formValues}: FormValues) {
         updateArticle.mutate({...data, id: formValues.id, slug: formatSlug(data.title)}, {
             onSuccess: (response) => {
                 form.reset()
-                router.push(`/deep-dives/${response.categoryId}/${response.id}`)
+                router.push(`/deep-dives/${response.categorySlug}/${response.id}`)
             }
         })
     }
