@@ -25,6 +25,7 @@ export default function Projects() {
                             liveLink={project.liveLink}
                             githubLink={project.githubLink}
                             tag={project.tag as Project_Tag}
+                            slug={project.slug}
                          />
                     </div>)}
             </div>
