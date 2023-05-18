@@ -113,7 +113,7 @@ export default function Me() {
                             and that's exactly what led me to where I am today.
                             I worked as a field plumber to partially pay for my college tuition. While studying 
                             biomedical engineering in college, I already knew that my true passion was 
-                            for software development, I just didn't know how to start.
+                            for software development, I just didn't know where to start.
                             After graduation, I worked for a year as a biomedical engineer in a grade 3 hospital in northern uganda. 
                             I saved up money and invested in a 5-week web development bootcamp, 
                             which turned out to be a life-changing experience for me.
