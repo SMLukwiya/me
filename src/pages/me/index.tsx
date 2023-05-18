@@ -59,7 +59,7 @@ const funFacts = [
             write about. But growing up, my mother used to teach at a local christian school and she always brought
             back papers to grade from home. I would sit with her and read some of the answer approaches 
             for the pupils, and it was very interesting. I wanted to engage with them to learn how they come
-            up with such interesting approaches. So when I told her, her response was "just write😄". 
+            up with such interesting approaches,😄". 
         `,
         iconPath: <path d="M288 0h112c8.8 0 16 7.2 16 16v48c0 8.8-7.2 16-16 16h-80v15.5l90.3 64.5H512c35.3 0 64 28.7 64 64v224c0 35.3-28.7 64-64 64H336V400c0-26.5-21.5-48-48-48s-48 21.5-48 48v112H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h101.7L256 95.5V32c0-17.7 14.3-32 32-32zm48 240c0-26.5-21.5-48-48-48s-48 21.5-48 48 21.5 48 48 48 48-21.5 48-48zM80 224c-8.8 0-16 7.2-16 16v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16H80zm368 16v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16zM80 352c-8.8 0-16 7.2-16 16v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16H80zm384 0c-8.8 0-16 7.2-16 16v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-32z" />
     },
@@ -106,7 +106,7 @@ export default function Me() {
                         <h1 className="text-slate-200 text-xl font-semibold">How I got to this point.</h1>
                     </div>
                     <div className="w-full md:w-[60%]">
-                        <h1 className="text-2xl text-slate-300">My transformation from Field plumber to biomedical engineer to software developer.</h1>
+                        <h1 className="text-2xl text-slate-300">My transformation from field plumbing to biomedical engineer to software developer.</h1>
                         <p className="text-slate-300">
                             I'm a firm believer that life is all about following your passions, where you start
                             must not define where you should end up,
