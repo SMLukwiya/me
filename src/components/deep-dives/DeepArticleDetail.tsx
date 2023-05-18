@@ -24,7 +24,7 @@ export default function DeepDiveArticleDetail({article}: {article: ArticleRespon
             {tags.length && tags.map((tag) => <span key={tag} className="bg-slate-200 p-1 rounded-lg mr-2 text-slate-600">{tag}</span>)}
             <div className="flex items-center justify-between mb-14 mt-4">
                 <p className="text-sm text-slate-300">By {article.authorName}</p>
-                {article.updatedAt && <p className="text-sm text-slate-300">Posted: {formatTime(article.updatedAt)}</p>}
+                {article.updatedAt && <p className="text-sm text-slate-300">Posted: {formatTime(article.createdAt)}</p>}
                 
             </div>
             <ReactMarkdown children={article.content} className={indexCss["markdown-body"]} />
