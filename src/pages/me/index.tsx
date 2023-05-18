@@ -111,11 +111,11 @@ export default function Me() {
                             I'm a firm believer that life is all about following your passions, where you start
                             must not define where you should end up,
                             and that's exactly what led me to where I am today.
-                            I worked as a field plumber to partially pay for my college tuition. After initially studying 
+                            I worked as a field plumber to partially pay for my college tuition. While studying 
                             biomedical engineering in college, I already knew that my true passion was 
-                            for software development.
-                            After graduation, I began working as a biomedical engineer in a grade 3 local hospital in northern uganda. 
-                            I saved up some money and decided to invest in a 5-week web development bootcamp, 
+                            for software development, I just didn't know how to start.
+                            After graduation, I worked for a year as a biomedical engineer in a grade 3 hospital in northern uganda. 
+                            I saved up money and invested in a 5-week web development bootcamp, 
                             which turned out to be a life-changing experience for me.
                             I decided to take a leap of faith and switch my path, which led me down an exciting and rewarding path.
                             After the bootcamp, I continued to teach myself and dive deeper into the world of software development. 
