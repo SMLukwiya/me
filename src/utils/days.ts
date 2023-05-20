@@ -3,10 +3,19 @@ import relativetime from "dayjs/plugin/relativeTime";
 
 dayjs.extend(relativetime);
 
-export function formatTime(date: string | Dayjs | Date) {
+type DateType = string | Dayjs | Date;
+
+export function formatTime(date: DateType) {
   if (!dayjs(date).isValid()) {
     return null;
   }
 
   return dayjs(date).fromNow();
+}
+
+export function isUpdate(createdAt: DateType, updatedAt: DateType) {
+  if (createdAt.toString() === updatedAt.toString()) {
+    return `Posted: ${formatTime(createdAt)}`;
+  }
+  return `Updated: ${formatTime(updatedAt)}`;
 }

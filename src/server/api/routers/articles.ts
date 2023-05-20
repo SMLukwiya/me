@@ -21,7 +21,13 @@ export const articlesRouter = createTRPCRouter({
     }),
 
   list: publicProcedure.query(async ({ ctx }) => {
-    const articles = await ctx.prisma.article.findMany();
+    const articles = await ctx.prisma.article.findMany({
+      orderBy: [
+        {
+          createdAt: "asc",
+        },
+      ],
+    });
     return articles;
   }),
 

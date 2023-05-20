@@ -55,6 +55,11 @@ export const deepDivesRouter = createTRPCRouter({
     .input(z.object({ categorySlug: z.string() }))
     .query(async ({ ctx, input }) => {
       const response = await ctx.prisma.deepDiveArticle.findMany({
+        orderBy: [
+          {
+            createdAt: "asc",
+          },
+        ],
         where: { categorySlug: input.categorySlug },
         include: { category: true },
       });

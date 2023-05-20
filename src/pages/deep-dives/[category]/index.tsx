@@ -14,9 +14,11 @@ export default function Category() {
 
     return (
         <Layout>
-            <div className="flex flex-wrap gap-3 w-4/5 m-auto justify-start px-10">
-                {articles?.map((article) => <div key={article.id} className="w-full md:w-[45%]">
-                    <DeepDiveArticleComponent key={article.id} article={article} category={category} /></div>
+            <div className="flex flex-wrap gap-3 w-4/5 mx-auto justify-between px-10">
+                {articles?.map((article) => 
+                    <div key={article.id} className="w-full md:w-[45%]">
+                        <DeepDiveArticleComponent key={article.id} article={article} category={category} />
+                    </div>
                 )}
             </div>
         </Layout>

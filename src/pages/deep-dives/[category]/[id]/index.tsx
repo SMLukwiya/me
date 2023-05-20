@@ -14,7 +14,7 @@ export default function Article() {
 
     return (
         <Layout>
-            <div className="w-3/4 mx-auto px-10">
+            <div className="w-full sm:w-3/4 mx-auto px-10">
                 {!article ? <h2>Not found</h2> : <DeepDiveArticleDetail article={article} />}
             </div>
         </Layout>

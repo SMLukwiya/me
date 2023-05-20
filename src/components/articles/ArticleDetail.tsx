@@ -1,8 +1,7 @@
 import { ArticleResponse } from "@/schemas/article.schema";
 import ReactMarkdown from "react-markdown"
 import indexCss from "../../styles/markdown-dark.module.css"
-import { formatTime } from "@/utils/days";
-import { useSession } from "next-auth/react";
+import { isUpdate } from "@/utils/days";
 import Link from "next/link";
 import Button from "../ui/Button";
 import { api } from "@/utils/api";
@@ -25,7 +24,7 @@ export default function ArticleDetail({article}: {article: ArticleResponse}) {
             {tags.length && tags.map((tag) => <span key={tag} className="bg-slate-200 p-1 rounded-lg mr-2 text-slate-600">{tag}</span>)}
             <div className="flex items-center justify-between mb-14 mt-4">
                 <p className="text-sm text-slate-300">By {article.authorName}</p>
-                {article.updatedAt && <p className="text-sm text-slate-300">Posted: {formatTime(article.createdAt)}</p>}
+                {article.updatedAt && <p className="text-sm text-slate-300">{isUpdate(article.createdAt, article.updatedAt)}</p>}
                 
             </div>
             <ReactMarkdown children={article.content} className={indexCss["markdown-body"]} />
