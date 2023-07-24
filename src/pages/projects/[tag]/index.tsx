@@ -15,7 +15,7 @@ export default function Projects() {
 
     return (
         <Layout>
-            <div className="w-full flex md:w-3/4 mx-auto px-10">
+            <div className="flex flex-wrap gap-3 w-4/5 mx-auto justify-between px-10">
                 {projects?.map((project) => 
                     <div key={project.id} className="w-[45%]">
                         <ProjectComponent
