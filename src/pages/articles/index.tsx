@@ -11,11 +11,11 @@ export default function Articles() {
     return (
         <Layout>
             <div className="flex flex-wrap gap-3 w-4/5 mx-auto justify-between px-10">
-                {articles?.map((article) => 
+                {articles?.map((article) => (
                     <div className="w-full md:w-[45%]" key={article.id}>
                         <ArticleComponent {...article} />
                     </div>)
-                }
+                )}
             </div>
         </Layout>
     )
